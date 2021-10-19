@@ -1,20 +1,30 @@
 import React from 'react'
-import { Formik } from 'formik'
+import { Formik, Form } from 'formik'
+import { SelectField } from './SelectField'
 
-export const BookingForm = () => {
+export const BookingForm = ({ class_schedule, setBookedClasses }: any) => {
+  function onSubmit (values: any) {
+    setBookedClasses(values)
+  }
+  
   return (
     <Formik
     initialValues={{
-      Monday: "",
-      Tuesday: "",
-      Wednesday: "",
-      Thursday: "",
-      Friday: "",
-      Saturday: "",
-      Sunday: ""
+      monday: "",
+      tuesday: "",
+      wednesday: "",
+      thursday: "",
+      friday: "",
+      saturday: "",
+      sunday: ""
     }}
-    onSubmit={(values : any) =>
-    alert(values)}>
+    onSubmit={onSubmit}>
+      <Form>
+        {Object.entries(class_schedule).map((dailyClasses, i) => (
+           <SelectField key={i} name={dailyClasses[0]} label={dailyClasses[0]} dailyClasses={dailyClasses[1]}/>
+        ))}
+        <button type="submit">Submit</button>
+      </Form>
     </Formik>
   )
 }

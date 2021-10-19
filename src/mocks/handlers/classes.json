@@ -1,6 +1,6 @@
 {
   "class_schedule": {
-    "Monday": [
+    "monday": [
       {
         "class_title": "Level 1 Silks",
         "teacher": "Stacey",
@@ -22,7 +22,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Tuesday": [
+    "tuesday": [
       {
         "class_title": "Silks Combos",
         "teacher": "Ruby",
@@ -44,7 +44,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Wednesday": [
+    "wednesday": [
       {
         "class_title": "Stretch and Flex",
         "teacher": "Rosie",
@@ -66,7 +66,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Thursday": [
+    "thursday": [
       {
         "class_title": "Heels Flow",
         "teacher": "Anna",
@@ -88,7 +88,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Friday": [
+    "friday": [
       {
         "class_title": "Twerk",
         "teacher": "Kristyna",
@@ -110,7 +110,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Saturday": [
+    "saturday": [
       {
         "class_title": "Hula Hoop",
         "teacher": "Olivia",
@@ -132,7 +132,7 @@
         "class_description": "For rest days"
       }
     ],
-    "Sunday": [
+    "sunday": [
       {
         "class_title": "Level 1 Pole",
         "teacher": "Noelle",
