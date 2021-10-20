@@ -1,5 +1,12 @@
 import React from "react";
-import { ErrorMessage, useField } from "formik";
+import { useField } from "formik";
+
+export interface IndividualClassInterface {
+  class_id: string;
+  class_title: string;
+  teacher: string;
+  class_description: string;
+}
 
 export const SelectField = (props: any) => {
   const [field] = useField(props);
@@ -7,11 +14,14 @@ export const SelectField = (props: any) => {
     <div>
       <label htmlFor={field.name}>{props.label}</label>
       <select {...field}>
-        <option defaultValue="">
-          Please choose a class.
-        </option>
-       {props.dailyClasses.map((aClass:any , i: number) =>
-       <option key={i} value={aClass.class_title}>{aClass.class_title}</option>)}
+        <option defaultValue="">Please choose a class.</option>
+        {props.dailyClasses.map(
+          (individualClass: IndividualClassInterface, i: number) => (
+            <option key={i} value={individualClass.class_id}>
+              {individualClass.class_title}
+            </option>
+          )
+        )}
       </select>
     </div>
   );

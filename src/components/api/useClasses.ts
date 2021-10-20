@@ -8,6 +8,7 @@ export const useClasses = () => {
   const isLoading = !error && !data
   return {
     data,
-    isLoading
+    isLoading,
+    error
   }
 }

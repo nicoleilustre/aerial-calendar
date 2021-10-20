@@ -1,21 +1,19 @@
 import React from "react";
-import { useClasses } from "../components/api/useClasses";
-import { Loading } from "../components/Loading";
 import { BookingForm } from "../components/BookingForm";
 import { ClassSchedule } from "../components/ClassSchedule";
+import { Header } from "../components/Header";
 
-export const Homepage = ({ setBookedClasses, setClassDetails }: any) => {
-  const { data, isLoading }: { data: any; isLoading: any } = useClasses();
-
+export const Homepage = ({
+  setBookedClasses,
+  setClassDetails,
+  username,
+  data,
+}: any) => {
   return (
     <>
-      {isLoading && <Loading />}
-      {!isLoading && data && (
-        <>
-          <BookingForm class_schedule={data} setBookedClasses={setBookedClasses}/>
-          <ClassSchedule class_schedule={data} setClassDetails={setClassDetails} />
-        </>
-      )}
+      <Header username={username} />
+      <BookingForm classSchedule={data} setBookedClasses={setBookedClasses} />
+      <ClassSchedule classSchedule={data} setClassDetails={setClassDetails} />
     </>
   );
 };

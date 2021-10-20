@@ -2,156 +2,142 @@
   "class_schedule": {
     "monday": [
       {
+        "class_id": "mon_l1_silks",
         "class_title": "Level 1 Silks",
         "teacher": "Stacey",
         "class_description": "Basic silk techniques for beginners"
       },
       {
+        "class_id": "mon_l2_pole",
         "class_title": "Level 2 Pole",
         "teacher": "Rosie",
         "class_description": "This class will take you higher up the pole and will go through the basic concept of inverting"
       },
       {
+        "class_id": "mon_l1_hoop",
         "class_title": "Level 1 Hoop",
         "teacher": "Tash",
         "class_description": "Basic poses and transitions on the hoop"
-      },
-      {
-        "class_title": "Not training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "tuesday": [
       {
+        "class_id": "tue_silks_combo",
         "class_title": "Silks Combos",
         "teacher": "Ruby",
         "class_description": "Stitching moves and tricks together to form combos"
       },
       {
+        "class_id": "tue_l3_pole",
         "class_title": "Level 3 Pole",
         "teacher": "Brittney",
         "class_description": "Fundamental aerial moves and intermediate tricks"
       },
       {
+        "class_id": "tue_l5_pole",
         "class_title": "Level 5 Pole",
         "teacher": "Karry",
         "class_description": "The most advanced pole class. Advance tricks and transitions"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "wednesday": [
       {
+        "class_id": "wed_stretch_flex",
         "class_title": "Stretch and Flex",
         "teacher": "Rosie",
         "class_description": "Focuses on activation and engagement of muscles to help with flexibility"
       },
       {
+        "class_id": "wed_spin_pole",
         "class_title": "Spin Pole",
         "teacher": "Jess",
         "class_description": "Tricks, transitions and combos on spin pole"
       },
       {
+        "class_id": "wed_handstands",
         "class_title": "Handstands",
         "teacher": "Violet",
         "class_description": "Work on your handstands skills and conditioning"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "thursday": [
       {
+        "class_id": "thur_heels_flow",
         "class_title": "Heels Flow",
         "teacher": "Anna",
         "class_description": "Build the the art of sensual movement and dance in heels"
       },
       {
+        "class_id": "wed_conditioning",
         "class_title": "Conditioning",
         "teacher": "Kristyna",
         "class_description": "All about conditiong to build stronger muscles"
       },
       {
+        "class_id": "wed_hammock_zen",
         "class_title": "Hammock Zen",
         "teacher": "Danielle",
         "class_description": "Time to zen out with a guided meditation on a hhammock"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "friday": [
       {
+        "class_id": "fri_twerk",
         "class_title": "Twerk",
         "teacher": "Kristyna",
         "class_description": "Time to shake and work out your booty with twerk classes"
       },
       {
+        "class_id": "fri_floorplay",
         "class_title": "Floorplay",
         "teacher": "Nicole",
         "class_description": "Learn floorbased tricks and skills and sequences"
       },
       {
+        "class_id": "fri_training_time",
         "class_title": "Training time",
         "teacher": "No instructor",
         "class_description": "Free time for students to practice on their own"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "saturday": [
       {
+        "class_id": "sat_hula_hoop",
         "class_title": "Hula Hoop",
         "teacher": "Olivia",
         "class_description": "Learn basic and fun tricks you can do with a Hula Hoop"
       },
       {
+        "class_id": "sat_training_time",
         "class_title": "Training time",
         "teacher": "No instructor",
         "class_description": "Free time for students to practice on their own"
       },
       {
+        "class_id": "sat_hoop_combos",
         "class_title": "Hoop Combos",
         "teacher": "Ines",
         "class_description": "Stitch together tricks and moves on the hoop to beautiful combos"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ],
     "sunday": [
       {
+        "class_id": "sun_l1_pole",
         "class_title": "Level 1 Pole",
         "teacher": "Noelle",
         "class_description": "Learn the very basic fundamentals of pole"
       },
       {
+        "class_id": "sun_training_time",
         "class_title": "Training time",
         "teacher": "No instructor",
         "class_description": "Free time for students to practice on their own"
       },
       {
+        "class_id": "sun_hoop_combos",
         "class_title": "Hoop Combos",
         "teacher": "Ines",
         "class_description": "Stitch together tricks and moves on the hoop to beautiful combos"
-      },
-      {
-        "class_title": "Not Training",
-        "teacher": "No teacher",
-        "class_description": "For rest days"
       }
     ]
   }

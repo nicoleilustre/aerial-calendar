@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BackButton } from "../components/BackButton";
 
 export const ClassDetails = ({ classDetails }: any) => {
   return (
     <>
-      <button>
-        <Link to={"/home"}>Back to calendar</Link>
-      </button>
+      <BackButton />
       <div>{classDetails.class_title}</div>
       <div>{classDetails.class_description}</div>
       <div>{classDetails.teacher}</div>

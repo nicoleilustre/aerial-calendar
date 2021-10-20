@@ -1,9 +1,20 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { TextField } from "../components/TextField";
 
-export const Login = () => {
+interface UserDetailsInterface {
+  username: string;
+  password: string;
+}
+
+export const Login = ({ setUsername }: any) => {
+  const history = useHistory();
+  function onSubmit(values: UserDetailsInterface) {
+    setUsername(values.username);
+    history.push("/home");
+  }
   return (
     <Formik
       initialValues={{
@@ -16,9 +27,7 @@ export const Login = () => {
           .required("Username required"),
         password: Yup.string().required("Password required"),
       })}
-      onSubmit={(values) => {
-        alert(values);
-      }}
+      onSubmit={onSubmit}
     >
       <Form>
         <TextField name="username" label="username" type="text" />
