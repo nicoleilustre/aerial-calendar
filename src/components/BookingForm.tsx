@@ -34,9 +34,9 @@ export const BookingForm = ({ classSchedule, setBookedClasses }: any) => {
       onSubmit={onSubmit}
     >
       <Form>
-        {Object.entries(classSchedule).map((dailyClasses, i) => (
+        {Object.entries(classSchedule).map((dailyClasses) => (
           <SelectField
-            key={i}
+            key={dailyClasses[0]}
             name={dailyClasses[0]}
             label={dailyClasses[0]}
             dailyClasses={dailyClasses[1]}

@@ -1,30 +1,22 @@
 import React from "react";
 import { BackButton } from "../components/BackButton";
 
-// interface BookedClassInterface {
-// [index: number]: ArrayInterface
-// }
-
-// interface ArrayInterface {
-//   [index: number]: string
-// }
-
-export const BookedClassesPage = ({ bookedClasses, data }: any) => {
+export const BookedClassesPage = ({ bookedClasses, classSchedule }: any) => {
   const listOfClasses = [
-    ...data.monday,
-    ...data.tuesday,
-    ...data.wednesday,
-    ...data.thursday,
-    ...data.friday,
-    ...data.saturday,
-    ...data.sunday,
+    ...classSchedule.monday,
+    ...classSchedule.tuesday,
+    ...classSchedule.wednesday,
+    ...classSchedule.thursday,
+    ...classSchedule.friday,
+    ...classSchedule.saturday,
+    ...classSchedule.sunday,
   ];
 
   return (
     <>
       <BackButton />
       <h1>You are booked in to:</h1>
-      {Object.entries(bookedClasses).map((bookedClass: any) => (
+      {Object.entries(bookedClasses).map((bookedClass) => (
         <React.Fragment key={bookedClass[0]}>
           <div>{bookedClass[0]}</div>
           {!bookedClass[1] && <div>No class booked</div>}

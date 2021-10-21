@@ -16,8 +16,8 @@ export const SelectField = (props: any) => {
       <select {...field}>
         <option defaultValue="">Please choose a class.</option>
         {props.dailyClasses.map(
-          (individualClass: IndividualClassInterface, i: number) => (
-            <option key={i} value={individualClass.class_id}>
+          (individualClass: IndividualClassInterface) => (
+            <option key={individualClass.class_id} value={individualClass.class_id}>
               {individualClass.class_title}
             </option>
           )

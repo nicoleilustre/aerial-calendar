@@ -5,15 +5,17 @@ import { Header } from "../components/Header";
 
 export const Homepage = ({
   setBookedClasses,
-  setClassDetails,
   username,
-  data,
+  classSchedule,
 }: any) => {
   return (
     <>
       <Header username={username} />
-      <BookingForm classSchedule={data} setBookedClasses={setBookedClasses} />
-      <ClassSchedule classSchedule={data} setClassDetails={setClassDetails} />
+      <BookingForm
+        classSchedule={classSchedule}
+        setBookedClasses={setBookedClasses}
+      />
+      <ClassSchedule classSchedule={classSchedule} />
     </>
   );
 };

@@ -8,10 +8,9 @@ import { BookedClassesPage } from "./pages/bookedClassespage";
 import { ClassDetails } from "./pages/classDetails";
 
 function App() {
-  const { data, isLoading }: { data: any; isLoading: any } = useClasses();
+  const { data, isLoading }: { data: any; isLoading: boolean } = useClasses();
   const [username, setUsername] = useState("");
-  const [bookedClasses, setBookedClasses] = useState([]);
-  const [classDetails, setClassDetails] = useState({});
+  const [bookedClasses, setBookedClasses] = useState({});
 
   return (
     <Router>
@@ -22,18 +21,17 @@ function App() {
         {isLoading && <Loading />}
         {!isLoading && data && (
           <Homepage
-            data={data}
+            classSchedule={data}
             setBookedClasses={setBookedClasses}
-            setClassDetails={setClassDetails}
             username={username}
           />
         )}
       </Route>
       <Route exact path={"/bookedClasses"}>
-        <BookedClassesPage data={data} bookedClasses={bookedClasses} />
+        <BookedClassesPage classSchedule={data} bookedClasses={bookedClasses} />
       </Route>
-      <Route exact path={"/classDetails"}>
-        <ClassDetails classDetails={classDetails} />
+      <Route exact path={"/classDetails/:class_id"}>
+        <ClassDetails classSchedule={data} />
       </Route>
     </Router>
   );
