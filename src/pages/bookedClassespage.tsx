@@ -1,37 +1,41 @@
 import React from "react";
-import { BackButton } from "../components/BackButton";
+import { listOfClasses } from "../utils/listOfClasses";
+import { useClasses } from "../components/api/useClasses";
+import { Loading } from "../components/Loading";
+import { ApiInterface, BookedClassesInterface } from "../utils/types";
 
-export const BookedClassesPage = ({ bookedClasses, classSchedule }: any) => {
-  const listOfClasses = [
-    ...classSchedule.monday,
-    ...classSchedule.tuesday,
-    ...classSchedule.wednesday,
-    ...classSchedule.thursday,
-    ...classSchedule.friday,
-    ...classSchedule.saturday,
-    ...classSchedule.sunday,
-  ];
+export const BookedClassesPage = ({ bookedClasses }: any) => {
+  const { data, isLoading, error }: ApiInterface = useClasses();
+  const classes = listOfClasses(data);
 
+  console.log(bookedClasses);
   return (
     <>
-      <BackButton />
-      <h1>You are booked in to:</h1>
-      {Object.entries(bookedClasses).map((bookedClass) => (
-        <React.Fragment key={bookedClass[0]}>
-          <div>{bookedClass[0]}</div>
-          {!bookedClass[1] && <div>No class booked</div>}
-          {bookedClass[1] && (
-            <div>
-              {
-                listOfClasses.find(
-                  (individualClass) =>
-                    individualClass.class_id === bookedClass[1]
-                ).class_title
-              }
-            </div>
-          )}
-        </React.Fragment>
-      ))}
+      {isLoading && <Loading />}
+      {!isLoading && error && <div>Error</div>}
+      {!isLoading && data && (
+        <>
+          <h1>You are booked in to:</h1>
+          <>
+            {Object.keys(bookedClasses).map((day) => (
+              <React.Fragment key={day}>
+                <div>{day.charAt(0).toUpperCase() + day.slice(1)}</div>
+                {!bookedClasses[day] && <div>No class booked</div>}
+                {bookedClasses[day] && (
+                  <div>
+                    {
+                      classes.find(
+                        (individualClass) =>
+                          individualClass.class_id === bookedClasses[day]
+                      ).class_title
+                    }
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </>
+        </>
+      )}
     </>
   );
 };

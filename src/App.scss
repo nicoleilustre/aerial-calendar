@@ -1,0 +1,56 @@
+#login-form {
+  text-align: center;
+}
+
+#booking-form {
+  display: inline;
+  float: left;
+}
+
+#calendar {
+  display: inline;
+  float: right;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+}
+
+.error {
+  color: red;
+}
+
+.text-field,
+.select-field {
+  margin: 1rem;
+}
+
+select {
+  padding: 1rem;
+  background-color: white;
+  border: 0.05rem solid rgba(0, 0, 0, 0.4);
+  height: 3rem;
+}
+
+.btn-center {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-right {
+  float: right;
+  margin: 0 auto;
+}
+
+#header {
+  background-color: black;
+  margin: 2rem 0 2rem 0;
+}
+
+#header-welcome {
+  color: white;
+  display: inline;
+  margin: 3rem 1rem 3rem 1rem;
+}

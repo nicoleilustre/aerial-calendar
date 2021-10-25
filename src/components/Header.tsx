@@ -1,8 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { UsernamePropInterface } from '../utils/types'
 
-interface UsernamePropInterface {
-  username: string;
-}
+
 export const Header = ({ username }: UsernamePropInterface) => {
-  return <h1>Welcome, {username}</h1>;
+  const history = useHistory();
+  function handleClick() {
+    history.push("/home");
+  }
+  return (
+    <div id="header">
+      <h1 id="header-welcome">Welcome, {username}</h1>
+      <button className="btn-right" onClick={handleClick}>Back</button>
+    </div>
+  );
 };

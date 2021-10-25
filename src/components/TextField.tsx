@@ -1,20 +1,18 @@
 import React from "react";
 import { ErrorMessage, useField } from "formik";
-
-interface InputInterface {
-  name: string;
-  label: string;
-  type: string;
-}
+import { InputInterface } from "../utils/types";
 
 export const TextField = (props: InputInterface) => {
   const [field] = useField(props);
 
   return (
-    <div>
-      <label htmlFor={field.name}>{props.label}</label>
+    <div className="text-field">
+      <label htmlFor={props.name}>{props.label}</label>
       <input {...field} {...props} />
-      <ErrorMessage render={(msg) => <div>{msg}</div>} name={field.name} />
+      <ErrorMessage
+        render={(msg) => <div className="error">{msg}</div>}
+        name={field.name}
+      />
     </div>
   );
 };

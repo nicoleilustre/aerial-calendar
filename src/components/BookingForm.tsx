@@ -2,18 +2,16 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { SelectField } from "./SelectField";
+import { SetBookedClassesInterface } from "../utils/types";
+import { BookedClassesInterface, ClassScheduleInterface } from "../utils/types";
 
-interface BookedClassesInterface {
-  monday: string;
-  tuesday: string;
-  wednesday: string;
-  thursday: string;
-  friday: string;
-  saturday: string;
-  sunday: string;
-}
-
-export const BookingForm = ({ classSchedule, setBookedClasses }: any) => {
+export const BookingForm = ({
+  classSchedule,
+  setBookedClasses,
+}: {
+  classSchedule: any;
+  setBookedClasses: SetBookedClassesInterface;
+}) => {
   const history = useHistory();
   function onSubmit(values: BookedClassesInterface) {
     setBookedClasses(values);
@@ -33,16 +31,19 @@ export const BookingForm = ({ classSchedule, setBookedClasses }: any) => {
       }}
       onSubmit={onSubmit}
     >
-      <Form>
-        {Object.entries(classSchedule).map((dailyClasses) => (
+      <Form id="booking-form">
+        {Object.keys(classSchedule).map((day) => (
           <SelectField
-            key={dailyClasses[0]}
-            name={dailyClasses[0]}
-            label={dailyClasses[0]}
-            dailyClasses={dailyClasses[1]}
+            id={classSchedule[day].class_id}
+            key={day}
+            name={day}
+            label={day}
+            dailyClasses={classSchedule[day]}
           />
         ))}
-        <button type="submit">Submit</button>
+        <button className="btn-center" type="submit">
+          Submit
+        </button>
       </Form>
     </Formik>
   );

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Table } from "semantic-ui-react";
-import { IndividualClassInterface } from "./SelectField";
+import { DailyClassesInterface } from "../utils/types";
 
-export const IndividualClass = ({ dailyClasses }: any) => {
+export const IndividualClass = (props: DailyClassesInterface) => {
   return (
     <>
-      {dailyClasses.map((individualClass: IndividualClassInterface) => (
+      {props.dailyClasses.map((individualClass) => (
         <Table.Row key={individualClass.class_id}>
           <Table.Cell>
             <Link to={"/classDetails/" + individualClass.class_id}>
