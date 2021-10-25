@@ -4,11 +4,9 @@ import { useClasses } from "../components/api/useClasses";
 import { Loading } from "../components/Loading";
 import { ApiInterface, BookedClassesInterface } from "../utils/types";
 
-export const BookedClassesPage = ({ bookedClasses }: any) => {
+export const BookedClassesPage = ({ bookedClasses }: {bookedClasses: BookedClassesInterface }) => {
   const { data, isLoading, error }: ApiInterface = useClasses();
   const classes = listOfClasses(data);
-
-  console.log(bookedClasses);
   return (
     <>
       {isLoading && <Loading />}

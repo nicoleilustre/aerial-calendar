@@ -24,17 +24,17 @@ function App() {
       <Route exact path="/login">
         <Login setUsername={setUsername} />
       </Route>
-      <Route path="/">
+      <Route path="/home">
         <Header username={username} />
       </Route>
       <Switch>
-        <Route path="/home">
+        <Route exact path="/home">
           <Homepage setBookedClasses={setBookedClasses} />
         </Route>
-        <Route path="/bookedClasses">
+        <Route path="/home/bookedClasses">
           <BookedClassesPage bookedClasses={bookedClasses} />
         </Route>
-        <Route path="/classDetails/:class_id">
+        <Route path="/home/classDetails/:class_id">
           <ClassDetails />
         </Route>
       </Switch>

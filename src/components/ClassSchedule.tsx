@@ -3,7 +3,7 @@ import { Table } from "semantic-ui-react";
 import { IndividualClass } from "./IndividualClass";
 import { ClassScheduleInterface } from "../utils/types";
 
-export const ClassSchedule = ({ classSchedule } : any) => {
+export const ClassSchedule = ({ classSchedule } : ClassScheduleInterface) => {
   return (
     <Table id="calendar">
       <Table.Header>
@@ -14,13 +14,11 @@ export const ClassSchedule = ({ classSchedule } : any) => {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        <Table.Row>
           {Object.keys(classSchedule).map((day: string) => (
-            <Table.Cell key={day}>
+            <Table.Row key={day}>
               <IndividualClass dailyClasses={classSchedule[day]} />
-            </Table.Cell>
+              </Table.Row>
           ))}
-        </Table.Row>
       </Table.Body>
     </Table>
   );

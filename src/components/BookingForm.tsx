@@ -2,20 +2,19 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { SelectField } from "./SelectField";
-import { SetBookedClassesInterface } from "../utils/types";
 import { BookedClassesInterface, ClassScheduleInterface } from "../utils/types";
 
 export const BookingForm = ({
   classSchedule,
   setBookedClasses,
 }: {
-  classSchedule: any;
-  setBookedClasses: SetBookedClassesInterface;
+  classSchedule: ClassScheduleInterface;
+  setBookedClasses: React.Dispatch<React.SetStateAction<{}>>
 }) => {
   const history = useHistory();
   function onSubmit(values: BookedClassesInterface) {
     setBookedClasses(values);
-    history.push("/bookedClasses");
+    history.push("/home/bookedClasses");
   }
 
   return (
