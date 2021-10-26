@@ -3,13 +3,16 @@ import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { TextField } from "../components/TextField";
-import { UserDetailsInterface,  PropsSetUsernameInterface} from "../utils/types";
+import {
+  UserDetailsInterface,
+  PropsSetUsernameInterface,
+} from "../utils/types";
 
 export const Login = (props: PropsSetUsernameInterface) => {
   const history = useHistory();
   function onSubmit(values: UserDetailsInterface) {
     props.setUsername(values.username);
-    history.push("/home")
+    history.push("/home");
   }
   return (
     <Formik
@@ -26,8 +29,8 @@ export const Login = (props: PropsSetUsernameInterface) => {
       onSubmit={onSubmit}
     >
       <Form id="login-form">
-        <TextField name="username" label="username" type="text" />
-        <TextField name="password" label="password" type="text" />
+        <TextField id="username" name="username" label="username" type="text" />
+        <TextField id="password" name="password" label="password" type="text" />
         <button className="btn-center" type="submit">
           Log in
         </button>

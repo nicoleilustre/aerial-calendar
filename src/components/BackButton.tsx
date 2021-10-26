@@ -1,12 +1,10 @@
-import React from 'react'
-import { useHistory} from 'react-router-dom'
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 export const BackButton = () => {
-  const history = useHistory()
+  const history = useHistory();
   function handleClick() {
-    history.push('/home')
+    history.push("/home");
   }
-  return (
-    <button onClick={handleClick}>Back to calendar</button>
-  )
-}
+  return <button onClick={handleClick}>Back to calendar</button>;
+};

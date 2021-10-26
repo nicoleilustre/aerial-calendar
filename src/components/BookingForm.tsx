@@ -9,7 +9,7 @@ export const BookingForm = ({
   setBookedClasses,
 }: {
   classSchedule: ClassScheduleInterface;
-  setBookedClasses: React.Dispatch<React.SetStateAction<{}>>
+  setBookedClasses: React.Dispatch<React.SetStateAction<{}>>;
 }) => {
   const history = useHistory();
   function onSubmit(values: BookedClassesInterface) {

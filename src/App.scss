@@ -7,11 +7,6 @@
   float: left;
 }
 
-#calendar {
-  display: inline;
-  float: right;
-}
-
 label {
   display: block;
   text-transform: uppercase;
@@ -42,6 +37,7 @@ select {
 .btn-right {
   float: right;
   margin: 0 auto;
+  font-size: 1.25rem
 }
 
 #header {
@@ -53,4 +49,34 @@ select {
   color: white;
   display: inline;
   margin: 3rem 1rem 3rem 1rem;
+}
+
+#bookedclasses-container {
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.cell {
+  border: 0.05rem solid rgba(0, 0, 0, 0.4);
+}
+
+#calendar-container {
+  width: 70%;
+  text-align: center;
+  display: inline-flex;
+  float: right;
+}
+
+.calendar-header {
+  padding: 2rem;
+  border: 0.05rem solid rgba(0, 0, 0, 0.4);
+}
+
+a, .class-booked {
+  font-size: 1.15rem;
+  text-decoration: none
 }

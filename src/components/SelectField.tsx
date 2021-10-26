@@ -1,6 +1,9 @@
 import React from "react";
 import { useField } from "formik";
-import { SelectFieldPropsInterface, IndividualClassInterface } from "../utils/types";
+import {
+  SelectFieldPropsInterface,
+  IndividualClassInterface,
+} from "../utils/types";
 
 export const SelectField = (props: any) => {
   const [field] = useField(props);

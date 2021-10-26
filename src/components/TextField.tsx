@@ -7,7 +7,7 @@ export const TextField = (props: InputInterface) => {
 
   return (
     <div className="text-field">
-      <label htmlFor={props.name}>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input {...field} {...props} />
       <ErrorMessage
         render={(msg) => <div className="error">{msg}</div>}

@@ -1,10 +1,15 @@
 import React from "react";
+import { Table } from "semantic-ui-react";
 import { listOfClasses } from "../utils/listOfClasses";
 import { useClasses } from "../components/api/useClasses";
 import { Loading } from "../components/Loading";
 import { ApiInterface, BookedClassesInterface } from "../utils/types";
 
-export const BookedClassesPage = ({ bookedClasses }: {bookedClasses: BookedClassesInterface }) => {
+export const BookedClassesPage = ({
+  bookedClasses,
+}: {
+  bookedClasses: BookedClassesInterface;
+}) => {
   const { data, isLoading, error }: ApiInterface = useClasses();
   const classes = listOfClasses(data);
   return (
@@ -12,15 +17,18 @@ export const BookedClassesPage = ({ bookedClasses }: {bookedClasses: BookedClass
       {isLoading && <Loading />}
       {!isLoading && error && <div>Error</div>}
       {!isLoading && data && (
-        <>
-          <h1>You are booked in to:</h1>
-          <>
-            {Object.keys(bookedClasses).map((day) => (
-              <React.Fragment key={day}>
-                <div>{day.charAt(0).toUpperCase() + day.slice(1)}</div>
-                {!bookedClasses[day] && <div>No class booked</div>}
+        <div id="bookedclasses-container">
+          {Object.keys(bookedClasses).map((day) => (
+            <div key={day}>
+              <h1 className="calendar-header">
+                {day.charAt(0).toUpperCase() + day.slice(1)}
+              </h1>
+              <>
+                {!bookedClasses[day] && (
+                  <div className="class-booked">No class booked</div>
+                )}
                 {bookedClasses[day] && (
-                  <div>
+                  <div className="class-booked">
                     {
                       classes.find(
                         (individualClass) =>
@@ -29,10 +37,10 @@ export const BookedClassesPage = ({ bookedClasses }: {bookedClasses: BookedClass
                     }
                   </div>
                 )}
-              </React.Fragment>
-            ))}
-          </>
-        </>
+              </>
+            </div>
+          ))}
+        </div>
       )}
     </>
   );

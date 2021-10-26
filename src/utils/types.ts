@@ -34,6 +34,7 @@ export interface ClassIdInterface {
 
 export interface InputInterface {
   name: string;
+  id: string;
   label: string;
   type: string;
 }
